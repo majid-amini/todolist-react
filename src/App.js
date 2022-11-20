@@ -4,15 +4,15 @@ import FormItems from "./components/FormItems";
 import TaskItems from "./components/TaskItems";
 function App() {
   const [todos, setTodo] = useState([]);
-  const addItemHandler = (e) => {
-    setTodo(...todos, e);
+  const addItemHandler = (todo) => {
+    setTodo([...todos, todo]);
+    console.log(todo);
   };
   return (
     <div className="App">
       <FormItems addItemHandler={addItemHandler} />
 
       <TaskItems todos={todos} />
-      
     </div>
   );
 }

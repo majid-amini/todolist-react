@@ -9,6 +9,8 @@ const FormItems = (props) => {
   const submitHandler = (e) => {
     setTodo([]);
     e.preventDefault();
+    props.addItemHandler(todo);
+    setTodo('');
   };
   console.log(todo);
   return (
