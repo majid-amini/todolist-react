@@ -8,6 +8,9 @@ const FormItems = (props) => {
   };
   const submitHandler = (e) => {
     e.preventDefault();
+    if (todo.trim().length === 0) {
+      return;
+    }
     props.addItemHandler(todo);
     setTodo("");
   };
