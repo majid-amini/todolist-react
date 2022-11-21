@@ -1,10 +1,12 @@
-// import react from "react";
 import "./TaskItems.css";
 const TaskItems = (props) => {
-  //   const renderTodos = props.todos.map((todo) => {
-  //     return <div>{todo.text}</div>;
-  //   });
-  return <div>{props.todos}</div>;
+  return (
+    <ul>
+      {props.todos.map((user) => (
+        <li key={user.id}>{user.todo}</li>
+      ))}
+    </ul>
+  );
 };
 
 export default TaskItems;

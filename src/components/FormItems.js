@@ -1,18 +1,16 @@
 import React, { useState } from "react";
 import "./FormItems.css";
 const FormItems = (props) => {
-  const [todo, setTodo] = useState('');
+  const [todo, setTodo] = useState("");
 
   const changeHandler = (e) => {
     setTodo(e.target.value);
   };
   const submitHandler = (e) => {
-    setTodo([]);
     e.preventDefault();
     props.addItemHandler(todo);
-    setTodo('');
+    setTodo("");
   };
-  console.log(todo);
   return (
     <div>
       <form onSubmit={submitHandler} className="form">
