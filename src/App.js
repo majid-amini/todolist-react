@@ -9,11 +9,15 @@ function App() {
       return [...item, { todo: userText, id: Math.random().toString() }];
     });
   };
+  const removeHandler = (id) => {
+    const filteredTasks = todos.filter((item) => item.id !== id);
+    setTodo(filteredTasks);
+  };
   return (
     <div className="App">
       <FormItems addItemHandler={addItemHandler} />
 
-      <TaskItems todos={todos} />
+      <TaskItems todos={todos} removeHandler={removeHandler} />
     </div>
   );
 }
